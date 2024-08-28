@@ -86,9 +86,92 @@ startBtn.type = 'submit'
 startBtn.value = 'Start'
 
 mainSpace.appendChild(startBtn)
+        
+const userNameError = document.createElement('p')
 
-startBtn.addEventListener('click' , function () {
+userNameError.className = 'errorText'
 
+userNameError.innerText = 'please enter your name'
+        
+const userAgeError = document.createElement('p')
+
+userAgeError.className = 'errorText'
+
+userAgeError.innerText = 'please enter your age'
+
+startBtn.addEventListener('click' , () => {
+
+    let isValueCorrect = false
+
+    if (userNameInput.value.trim() !== '') {
+
+        isValueCorrect = true
+        
+        try {
+
+            mainSpace.removeChild(userNameError)
+
+        } catch {}
+
+        userNameInput.style.border = '0'
+        
+        userNameInput.onblur = () => {
+
+            userNameInput.style.border = '0'
+
+        }
+        
+        userNameInput.onfocus = () => {
+
+            userNameInput.style.border = '2px solid var(--primaryColor)'
+
+        }
+
+
+    } else {
+
+        isValueCorrect = false
+
+        userNameInput.insertAdjacentElement('afterend' , userNameError)
+
+        userNameInput.style.border = '2px solid var(--errorColor)'
+
+    }
+
+    console.log(Number(userAgeInput.value.trim()));
+
+    if (userAgeInput.value.trim() !== '' && Number(userAgeInput.value.trim()) > 0) {
+
+        isValueCorrect = true
+        
+        try {
+
+            mainSpace.removeChild(userAgeError)
+
+        } catch {}
+
+        userAgeInput.style.border = '0'
+        
+        userAgeInput.onblur = () => {
+
+            userAgeInput.style.border = '0'
+
+        }
+        
+        userAgeInput.onfocus = () => {
+
+            userAgeInput.style.border = '2px solid var(--primaryColor)'
+
+        }
+
+    } else {
+        
+        isValueCorrect = false
+
+        userAgeInput.insertAdjacentElement('afterend' , userAgeError)
+
+        userAgeInput.style.border = '2px solid var(--errorColor)'
+
+    }
     
-
 })

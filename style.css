@@ -5,15 +5,17 @@
 
     --secoondryBgColor : hsl(0 , 0% , 96%);
 
+    --primaryColor : hsl(252, 72%, 72%);
+
+    --color : hsl(0 , 0% , 15%);
+
     --textFieldBgColor : hsl(0 , 0% , 90%);
 
     --placeholderColor : hsla(0 , 0% , 15% , 0.45);
 
-    --primaryColor : hsl(252, 60%, 72%);
+    --errorColor : hsl(342, 72%, 54%);
 
-    --color : hsl(0 , 0% , 15%);
-
-    --seccondryColor : hsl(0 , 0% , 96%);
+    --whiteColor : hsl(0 , 0% , 96%);
 
 }
 
@@ -48,7 +50,9 @@ body {
 
 #mainSpace {
 
-    width: 81%;
+    width: 90%;
+    max-width: 540px;
+
     height: 81%;
 
     background-color: var(--secoondryBgColor);
@@ -69,7 +73,7 @@ body {
 #appName {
 
     font-size: 45px;
-    font-weight: 900;
+    font-weight: bold;
 
     margin-bottom: 18px;
 
@@ -113,7 +117,9 @@ body {
 
     background-color: var(--primaryColor);
 
-    color: var(--seccondryColor);
+    color: var(--whiteColor);
+
+    font-weight: bold;
 
     padding: 3px 9px;
 
@@ -136,5 +142,17 @@ body {
 #startBtn:active {
 
     transform: scale(1 , 1);
+
+}
+
+.errorText {
+
+    width: 210px;
+
+    margin-top: 6px;
+
+    color: var(--errorColor);
+
+    font-size: 15px;
 
 }
