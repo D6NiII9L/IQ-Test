@@ -7,7 +7,9 @@
 
     --primaryColor : hsl(252, 72%, 72%);
 
-    --color : hsl(0 , 0% , 15%);
+    --primaryColorT : hsla(252, 72%, 72% , 0.18);
+
+    --color : hsl(0 , 0% , 9%);
 
     --textFieldBgColor : hsl(0 , 0% , 90%);
 
@@ -15,7 +17,9 @@
 
     --errorColor : hsl(342, 72%, 54%);
 
-    --whiteColor : hsl(0 , 0% , 96%);
+    --Color2 : hsl(0 , 0% , 96%);
+
+    --quizFilter : none;
 
 }
 
@@ -27,7 +31,11 @@
     border: 0;
     outline: 0;
 
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    color: var(--color);
+
+    transition: background-color 0.2s , color 0.2s;
 
 }
 
@@ -48,12 +56,50 @@ body {
 
 }
 
+#changeThemeBtn {
+
+    width: 45px;
+    height: 45px;
+
+    position: fixed;
+
+    right: 5%;
+    top: 33px;
+
+    z-index: 9;
+
+    background-color: var(--secoondryBgColor);
+
+    border-radius: 15px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    transition: transform 0.2s;
+
+    cursor: pointer;
+
+}
+
+#changeThemeBtn:hover {
+
+    transform: scale(1.1 , 1.1);
+
+}
+
+#changeThemeBtn:active {
+
+    transform: scale(1 , 1);
+
+}
+
 #mainSpace {
 
     width: 90%;
-    max-width: 540px;
+    max-width: 480px;
 
-    height: 81%;
+    height: 78%;
 
     background-color: var(--secoondryBgColor);
 
@@ -96,6 +142,10 @@ body {
 
     color: var(--primaryColor);
 
+    border: 2px solid var(--secoondryBgColor);
+
+    transition: border 0.2s;
+
 }
 
 .textField::placeholder {
@@ -117,7 +167,7 @@ body {
 
     background-color: var(--primaryColor);
 
-    color: var(--whiteColor);
+    color: var(--Color2);
 
     font-weight: bold;
 
@@ -130,6 +180,8 @@ body {
     border-radius: 12px;
 
     transition: transform 0.2s;
+
+    cursor: pointer;
 
 }
 
@@ -152,6 +204,175 @@ body {
     margin-top: 6px;
 
     color: var(--errorColor);
+
+    font-size: 15px;
+
+}
+
+#headerSpace {
+
+
+    width: 90%;
+    height: 10%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#userName {
+
+    font-size: 18px;
+
+    color: var(--primaryColorT);
+
+}
+
+#userName span {
+
+
+    font-size: 18px;
+    font-weight: 300;
+
+    color: var(--primaryColorT);
+
+}
+
+#quizPhotoSpace {
+
+    width: 81%;
+    height: 30%;
+
+    background-color: var(--bgColor);
+
+    border-radius: 33px;
+
+    padding: 18px;
+
+}
+
+.quizPhoto {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter: var(--quizFilter);
+
+}
+
+#quizOptionsSpace {
+
+    width: 81%;
+    height: 50%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6%;
+
+    padding: 18px;
+
+}
+
+.quizOptions {
+
+    width: 27%;
+    height: 27%;
+
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid var(--secoondryBgColor);
+
+    transition: background-color 0.2s , border 0.2s , transform 0.2s;
+
+    cursor: pointer;
+
+}
+
+.quizOptions img {
+
+    width: 90%;
+    height: 90%;
+
+    object-fit: contain;
+
+    filter: var(--quizFilter);
+
+}
+
+.quizOptions:hover {
+
+    border: 3px solid var(--primaryColor);
+
+    transform: scale(1.1 , 1.1);
+
+}
+
+.quizOptions:active {
+
+    background-color: var(--primaryColor);
+
+    transform: scale(1 , 1);
+
+}
+
+#iqResult {
+
+    font-size: 45px;
+
+    margin-bottom: 33px;
+
+}
+
+#resultProgressBar {
+
+    width: 81%;
+    height: 15px;
+
+    background-color: var(--bgColor);
+
+    border-radius: 6px;
+
+}
+
+#resultProgressBar div {
+
+    width: 0%;
+    height: 100%;
+
+    background-color: var(--primaryColor);
+
+    border-radius: 6px;
+
+}
+
+#resultNumber {
+
+    width: 81%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 9px 0;
+
+}
+
+#resultNumber span {
 
     font-size: 15px;
 
